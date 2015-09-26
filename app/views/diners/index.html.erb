@@ -3,12 +3,19 @@
 
 
 
-<%= link_to "Submit a diner!", new_diner_path %>
+<%= link_to "Signup your restaurant!", new_diner_path %>
 <hr>
 <% @diners.each do |diner| %>
-    <%= diner.email %>
-    <%= diner.name %>
-    <%= diner.location %>
+--------diner start------
+<div>
+    <div>email: <%= diner.email %></div>
+    <div>name: <%= diner.name %></div>
+    <div>location: <%= diner.location %></div>
+    <div>description: <%= diner.description %></div>
+    <div>rating: <%= diner.rating %></div>
+
+</div>
+-------diner end---------
 
 
 <p><%= diner.description %></p>
