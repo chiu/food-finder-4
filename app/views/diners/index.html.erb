@@ -6,8 +6,10 @@
 <%= link_to "Submit a diner!", new_diner_path %>
 <hr>
 <% @diners.each do |diner| %>
+    <%= diner.email %>
+    <%= diner.name %>
+    <%= diner.location %>
 
-<h2><%= link_to diner.name, diner_path(diner) %></h2>
 
 <p><%= diner.description %></p>
 <hr>
