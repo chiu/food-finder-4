@@ -24,7 +24,7 @@ class DinersController < ApplicationController
   protected
 
   def diner_params
-    params.require(:diner).permit(:email, :firstname, :lastname, :password, :password_confirmation)
+    params.require(:diner).permit(:email, :firstname, :lastname, :password, :password_confirmation, :location, :description, :rating)
   end
 
 end
