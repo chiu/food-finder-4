@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'deals/new'
+
+  get 'deals/create'
+
   get 'sessions/new'
 
   get 'sessions/create'
