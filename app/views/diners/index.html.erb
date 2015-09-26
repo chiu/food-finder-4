@@ -10,22 +10,26 @@
 <div><%= link_to "create deal", new_diner_deal_path(current_user) %></div> 
 <% end %>
 
--------diner start ------------
 
+<div>Your diner info:</div>
 <% @diners.each do |diner| %>
-<div>email: <%= diner.email %></div>
-<div>name: <%= diner.name %></div>
-<div>location: <%= diner.location %></div>
-<div>description: <%= diner.description %></div>
-<div>rating: <%= diner.rating %></div>
-<p><%= diner.description %></p>
-<div>Deals offered: </div>
-<% diner.deals.each do |deal| %>
-<p><%= deal.name %></p>
+
+    <% if current_user == nil || current_user.id == diner.id %>
+    <div>email: <%= diner.email %></div>
+    <div>name: <%= diner.name %></div>
+    <div>location: <%= diner.location %></div>
+    <div>description: <%= diner.description %></div>
+    <div>rating: <%= diner.rating %></div>
+    <p><%= diner.description %></p>
+    </br>
+    <div>Deals offered: </div>
+    <% diner.deals.each do |deal| %>
+    <div><%= deal.name %></div>
+    </br>
+    <% end %>
 <% end %>
 
 
--------diner end---------
 
 
 
