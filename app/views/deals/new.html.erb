@@ -1,0 +1,29 @@
+<h1>Deals#new</h1>
+<p>Find me in app/views/deals/new.html.erb</p>
+
+<%= link_to "Back to diner", diner_path(@diner) %><br/>
+
+<h2>Write a deal of <em><%= @diner.name %></em>.</h2>
+
+<%= form_for([@diner, @deal]) do |f| %>
+<% if @deal.errors.any? %>
+<div>
+  <%= pluralize(@deal.errors.count, "error") %> prevented the deal from being saved:
+  <ul>
+    <% @deal.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+</ul>
+</div>
+<% end %>
+
+<div>
+    <%= f.label :name %><br>
+    <%= f.text_area "name" %>
+</div>
+<div>
+    <%= f.label :old_price %><br>
+    <%= f.number_field :old_price %>
+</div>
+<div><%= f.submit "Submit" %></div>
+<% end %>

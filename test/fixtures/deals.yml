@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diner_id: 
+  name: MyString
+  old_price: 1
+  new_price: 1
+  offer_start: 2015-09-26 08:21:54
+  offer_end: 2015-09-26 08:21:54
+  pickup_start: 2015-09-26 08:21:54
+  pickup_end: 2015-09-26 08:21:54
+  description: MyText
+
+two:
+  diner_id: 
+  name: MyString
+  old_price: 1
+  new_price: 1
+  offer_start: 2015-09-26 08:21:54
+  offer_end: 2015-09-26 08:21:54
+  pickup_start: 2015-09-26 08:21:54
+  pickup_end: 2015-09-26 08:21:54
+  description: MyText

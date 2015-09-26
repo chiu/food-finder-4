@@ -1,6 +1,3 @@
-
-
-
 class DinersController < ApplicationController
 
   def new
@@ -11,11 +8,18 @@ class DinersController < ApplicationController
     @diners = Diner.all
   end
 
+  def display_api
+    @diners = Diner.all
+    # @messages = current_user.messages
+    render json: @diners
+  end
+
   def create
     @diner = Diner.new(diner_params)
 
     if @diner.save
-      redirect_to diners_path
+      session[:diner_id] = @diner.id
+      redirect_to diners_path, notice: "Welcome aboard, #{@diner.email}!"
     else
       render :new
     end

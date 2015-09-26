@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
-  get 'diners/new'
+  # get 'deals/new'
 
-  get 'diners/create'
+  # get 'deals/create'
 
-  # get 'restaurants/index'
+  # get 'sessions/new'
 
-  # get 'restaurants/show'
+  # get 'sessions/create'
 
-  # get 'restaurants/new'
+  # get 'diners/new'
 
-  # get 'restaurants/edit'
-  resources :restaurants
-  # resources :diners, only: [:new, :create]
-  # resources :diners, only: [:new, :create, :index]
+  # get 'diners/create'
 
-  resources :diners
+  get 'diners/api', :to => 'diners#index'
+  get '/api/diners', :to => 'diners#display_api'
+  get '/api/deals', :to => 'deals#display_api'
+
+  resources :diners do
+     resources :deals, only: [:new, :create]
+  end
+
+ 
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

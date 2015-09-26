@@ -3,21 +3,32 @@
 
 
 
-<%= link_to "Signup your restaurant!", new_diner_path %>
-<hr>
-<% @diners.each do |diner| %>
---------diner start------
-<div>
-    <div>email: <%= diner.email %></div>
-    <div>name: <%= diner.name %></div>
-    <div>location: <%= diner.location %></div>
-    <div>description: <%= diner.description %></div>
-    <div>rating: <%= diner.rating %></div>
 
-</div>
--------diner end---------
+<div><%= link_to "Add new retaurant!", new_diner_path %></div>
+
+
+<div><%= link_to "create deal", new_diner_deal_path(current_user) %></div> 
+
+-------diner start ------------
+
+<% @diners.each do |diner| %>
+<div>email: <%= diner.email %></div>
+<div>name: <%= diner.name %></div>
+<div>location: <%= diner.location %></div>
+<div>description: <%= diner.description %></div>
+<div>rating: <%= diner.rating %></div>
 
 
 <p><%= diner.description %></p>
-<hr>
+
+
+<div>Deals offered: </div>
+<% diner.deals.each do |deal| %>
+<p><%= deal.name %></p>
+<% end %>
+
+-------diner end---------
+
+
+
 <% end %>  
