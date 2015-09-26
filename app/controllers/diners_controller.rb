@@ -15,7 +15,8 @@ class DinersController < ApplicationController
     @diner = Diner.new(diner_params)
 
     if @diner.save
-      redirect_to diners_path
+      session[:diner_id] = @diner.id
+      redirect_to diners_path, notice: "Welcome aboard, #{@diner.email}!"
     else
       render :new
     end

@@ -8,10 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+   <% flash.each do |key, value| %>
+   <%= content_tag(:div, value) %>
+   <% end %>
+   <%= yield %>
 
-<%= yield %>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 </html>
