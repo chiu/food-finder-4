@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'diners/create'
 
+  # cool
+
   # get 'restaurants/index'
 
   # get 'restaurants/show'
