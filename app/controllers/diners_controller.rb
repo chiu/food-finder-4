@@ -1,6 +1,3 @@
-
-
-
 class DinersController < ApplicationController
 
   def new
