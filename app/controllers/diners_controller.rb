@@ -8,6 +8,12 @@ class DinersController < ApplicationController
     @diners = Diner.all
   end
 
+  def display_api
+    @diners = Diner.all
+    # @messages = current_user.messages
+    render json: @diners
+  end
+
   def create
     @diner = Diner.new(diner_params)
 

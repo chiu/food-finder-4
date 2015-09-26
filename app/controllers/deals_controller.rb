@@ -7,7 +7,12 @@ class DealsController < ApplicationController
         @deal = @diner.deals.build
     end
 
- 
+    def display_api
+        @deals = Deal.all
+        render json: @deals
+    end
+
+
 
     def create
         @diner = Diner.find(params[:diner_id])
