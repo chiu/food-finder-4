@@ -5,8 +5,7 @@
 
 <%= link_to "Back to all restaurants", restaurants_path %><br/>
 
-<%= link_to image_tag(@restaurant.poster_image_url), restaurant_path(@restaurant) %>
-<h2><%= @restaurant.title %> (<%= link_to "edit", edit_restaurant_path(@restaurant) %>, <%= link_to "delete", restaurant_path(@restaurant), method: :delete, confirm: "You sure?" %>)</h2>
-<h3><%= @restaurant.release_date %></h3>
-<h4>Dir. <%= @restaurant.director %> | <%= @restaurant.runtime_in_minutes %> minutes</h4>
+
+<h2><%= @restaurant.name %> (<%= link_to "edit", edit_restaurant_path(@restaurant) %>, <%= link_to "delete", restaurant_path(@restaurant), method: :delete, confirm: "You sure?" %>)</h2>
+
 <p><%= @restaurant.description %></p>
