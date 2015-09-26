@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get 'restaurants/new'
 
   # get 'restaurants/edit'
-  resources :restaurants
+  # resources :restaurants
   # resources :diners, only: [:new, :create]
   # resources :diners, only: [:new, :create, :index]
 
