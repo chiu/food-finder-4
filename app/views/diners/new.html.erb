@@ -3,12 +3,12 @@
 
 
 <h1>Sign Up</h1>
-    <%= form_for @user do |f| %>
-      <% if @user.errors.any? %>
+    <%= form_for @diner do |f| %>
+      <% if @diner.errors.any? %>
         <div>
-          <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
+          <%= pluralize(@diner.errors.count, "error") %> prevented the account from being created:
           <ul>
-            <% @user.errors.full_messages.each do |msg| %>
+            <% @diner.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>
@@ -19,12 +19,8 @@
         <%= f.text_field :email %>
       </div>
       <div>
-        <%= f.label :firstname, "First Name" %><br>
-        <%= f.text_field :firstname %>
-      </div>
-      <div>
-        <%= f.label :lastname, "Last Name" %><br>
-        <%= f.text_field :lastname %>
+        <%= f.label :name, "Name" %><br>
+        <%= f.text_field :name %>
       </div>
       <div>
         <%= f.label :password %><br>
