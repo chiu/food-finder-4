@@ -3,9 +3,11 @@
 
 
 
-<div><%= link_to "Signup your restaurant!", new_diner_path %></div>
+
+<div><%= link_to "Add new retaurant!", new_diner_path %></div>
 
 
+<div><%= link_to "Signup deal", new_diner_deal(:diner => current_user.id) %></div>
 
 -------diner start ------------
 
