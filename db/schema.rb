@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926052849) do
+ActiveRecord::Schema.define(version: 20150926082154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deals", force: :cascade do |t|
+    t.integer  "diner_id"
+    t.string   "name"
+    t.integer  "old_price"
+    t.integer  "new_price"
+    t.datetime "offer_start"
+    t.datetime "offer_end"
+    t.datetime "pickup_start"
+    t.datetime "pickup_end"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "deals", ["diner_id"], name: "index_deals_on_diner_id", using: :btree
 
   create_table "diners", force: :cascade do |t|
     t.string   "email"
@@ -36,4 +52,5 @@ ActiveRecord::Schema.define(version: 20150926052849) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "deals", "diners"
 end

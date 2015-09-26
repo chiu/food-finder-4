@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   # resources :diners, only: [:new, :create]
   # resources :diners, only: [:new, :create, :index]
 
-  resources :diners
+  resources :diners do
+     resources :deals, only: [:new, :create]
+  end
 
  
   resources :sessions, only: [:new, :create, :destroy]
