@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
   resources :diners
 
-  resources :sessions, only: [:new, :create]
+ 
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

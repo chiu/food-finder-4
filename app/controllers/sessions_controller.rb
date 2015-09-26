@@ -15,4 +15,9 @@ class SessionsController < ApplicationController
         end
     end
 
+    def destroy
+      session[:diner_id] = nil
+      redirect_to diners_path, notice: "Adios!"
+    end
+
 end
