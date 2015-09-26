@@ -3,25 +3,25 @@ class RestaurantsController < ApplicationController
 
 
     def index
-        @movies = Movie.all
+        @restaurants = Restaurant.all
     end
 
     def show
-        @movie = Movie.find(params[:id])
+        @restaurant = Restaurant.find(params[:id])
     end
 
     def new
-        @movie = Movie.new
+        @restaurant = Restaurant.new
     end
 
     def edit
-        @movie = Movie.find(params[:id])
+        @restaurant = Restaurant.find(params[:id])
     end
 
     def create
-        @movie = Movie.new(movie_params)
+        @restaurant = Restaurant.new(restaurant_params)
 
-        if @movie.save
+        if @restaurant.save
             redirect_to movies_path
         else
             render :new
@@ -29,26 +29,26 @@ class RestaurantsController < ApplicationController
     end
 
     def update
-        @movie = Movie.find(params[:id])
+        @restaurant = Restaurant.find(params[:id])
 
-        if @movie.update_attributes(movie_params)
-            redirect_to movie_path(@movie)
+        if @restaurant.update_attributes(restaurant_params)
+            redirect_to movie_path(@restaurant)
         else
             render :edit
         end
     end
 
     def destroy
-        @movie = Movie.find(params[:id])
-        @movie.destroy
+        @restaurant = Restaurant.find(params[:id])
+        @restaurant.destroy
         redirect_to movies_path
     end
 
     protected
 
-    def movie_params
-        params.require(:movie).permit(
-            :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
+    def restaurant_params
+        params.require(:restaurant).permit(
+            :name, :location, :rating, :description
             )
     end
 
