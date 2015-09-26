@@ -6,10 +6,9 @@
 <%= link_to "Submit a restaurant!", new_restaurant_path %>
 <hr>
 <% @restaurants.each do |restaurant| %>
-<%= link_to image_tag(restaurant.poster_image_url), restaurant_path(restaurant) %>
-<h2><%= link_to restaurant.title, restaurant_path(restaurant) %></h2>
-<h3><%= restaurant.release_date %></h3>
-<h4>Dir. <%= restaurant.director %> | <%= restaurant.runtime_in_minutes %> minutes</h4>
+
+<h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+
 <p><%= restaurant.description %></p>
 <hr>
 <% end %>
