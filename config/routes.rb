@@ -1,28 +1,17 @@
 Rails.application.routes.draw do
-  get 'deals/new'
+  # get 'deals/new'
 
-  get 'deals/create'
+  # get 'deals/create'
 
-  get 'sessions/new'
+  # get 'sessions/new'
 
-  get 'sessions/create'
+  # get 'sessions/create'
 
-  get 'diners/new'
+  # get 'diners/new'
 
-  get 'diners/create'
+  # get 'diners/create'
 
-  # cool
-
-  # get 'restaurants/index'
-
-  # get 'restaurants/show'
-
-  # get 'restaurants/new'
-
-  # get 'restaurants/edit'
-  # resources :restaurants
-  # resources :diners, only: [:new, :create]
-  # resources :diners, only: [:new, :create, :index]
+  get 'diners/api', :to => 'diners#index'
 
   resources :diners do
      resources :deals, only: [:new, :create]
