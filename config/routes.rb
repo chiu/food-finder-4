@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # get 'diners/create'
 
-  get 'diners/api', :to => 'diners#index'
+  # get 'diners/api', :to => 'diners#index'
   get '/api/diners', :to => 'diners#display_api'
   get '/api/deals', :to => 'deals#display_api'
 
