@@ -1,15 +1,4 @@
 
-<div id="crouton">
-    <ul>
-        <li><%= link_to "Sign Up", new_diner_path %></li>
-        <li><%= link_to "Contact", new_diner_path %></li>
-        <li><%= link_to "About Us", new_diner_path %></li>
-        <li><%= link_to "Log-in", new_diner_path %></li>
-    </ul>
-</div>
-
-
-
   <div id="slides">
     <ul class="slides-container">
     	<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/17920/dumbo.jpg" width="1680" height="1050">
@@ -37,7 +26,7 @@
 
    <a href="#page"><img src="http://s.cdpn.io/17920/button-down.png" width="175" height="77" id="button-down"></a>
 
-    <div id="primary-nav">Home | Music | News | Tour | Video | Photos</div>
+    <div id="primary-nav"><%= link_to "Sign Up", new_diner_path %> | About Us | Contact | Login</div>
   </div>
 
 <div id="page">
