@@ -1,2 +1,31 @@
 <h1>Restaurants#new</h1>
 <p>Find me in app/views/restaurants/new.html.erb</p>
+
+
+<%= link_to "Back to all restaurants", restaurants_path %>
+
+<h2>Submit a restaurant!</h2>
+<%= form_for @restaurant do |f| %>
+<div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+</div>
+
+
+<div>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+</div>
+<div>
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %>
+</div>
+
+<div>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+</div>
+<div>
+    <%= f.submit "Submit" %> 
+</div>
+<% end %>
