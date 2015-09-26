@@ -19,7 +19,7 @@
 
 <div>
     <%= f.label :name %><br>
-    <%= f.text_area "name" %>
+    <%= f.text_field :name %>
 </div>
 <div>
     <%= f.label :old_price %><br>
@@ -29,5 +29,31 @@
     <%= f.label :new_price %><br>
     <%= f.number_field :new_price %>
 </div>
+
+<div>
+<%= f.label :offer_start %><br>
+<%= f.date_field :offer_start %>
+</div>
+
+<div>
+<%= f.label :offer_end %><br>
+<%= f.date_field :offer_end %>
+</div>
+
+<div>
+<%= f.label :pickup_start %><br>
+<%= f.date_field :pickup_start %>
+</div>
+
+<div>
+<%= f.label :pickup_end %><br>
+<%= f.date_field :pickup_end %>
+</div>
+
+<div>
+    <%= f.label :description %><br>
+    <%= f.text_area "description" %>
+</div>
+
 <div><%= f.submit "Submit" %></div>
 <% end %>

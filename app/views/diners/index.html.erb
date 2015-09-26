@@ -4,11 +4,13 @@
 
 <h1> Cheep Eats Restaurant Admin Panel </h1>
 
-<div><%= link_to "Make an account for your diner!", new_diner_path %></div>
+<div><%= link_to "Make a new account for your diner!", new_diner_path %></div>
 <% if current_user %>
 
-<div><%= link_to "create deal", new_diner_deal_path(current_user) %></div> 
+<div><%= link_to "Create deal!", new_diner_deal_path(current_user) %></div> 
 <% end %>
+
+</br>
 
 
 <% if current_user == nil %>
@@ -27,11 +29,20 @@
             <div>location: <%= diner.location %></div>
             <div>description: <%= diner.description %></div>
             <div>rating: <%= diner.rating %></div>
-            <p><%= diner.description %></p>
+            <div>
+            description: <%= diner.description %>
+            </div>
             </br>
             <div>Deals offered: </div>
             <% diner.deals.each do |deal| %>
-            <div><%= deal.name %></div>
+            <div>name: <%= deal.name %></div>
+            <div>old_price: <%= deal.old_price %></div>
+            <div>new_price: <%= deal.new_price %></div>
+            <div>offer_start: <%= deal.offer_start %></div>
+            <div>offer_end: <%= deal.offer_end %></div>
+            <div>pickup_start: <%= deal.pickup_start %></div>
+            <div>pickup_end: <%= deal.pickup_end %></div>
+            <div>description: <%= deal.description %></div>
             </br>
         <% end %>
     <% end %>

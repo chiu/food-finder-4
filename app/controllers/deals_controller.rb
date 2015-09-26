@@ -29,7 +29,7 @@ class DealsController < ApplicationController
     protected
 
     def deal_params
-        params.require(:deal).permit(:name)
+        params.require(:deal).permit(:name, :old_price, :new_price, :offer_start, :offer_end, :pickup_start, :pickup_end, :description)
     end
 
 end
