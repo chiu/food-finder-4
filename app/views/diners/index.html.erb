@@ -14,6 +14,10 @@
     <div>description: <%= diner.description %></div>
     <div>rating: <%= diner.rating %></div>
 
+     <% @diner.deals.each do |deal| %>
+        <p><%= deal.name %></p>
+      <% end %>
+
 </div>
 -------diner end---------
 

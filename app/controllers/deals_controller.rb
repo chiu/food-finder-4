@@ -7,6 +7,8 @@ class DealsController < ApplicationController
         @deal = @diner.deals.build
     end
 
+ 
+
     def create
         @diner = Diner.find(params[:diner_id])
         @deal = @diner.deals.build(deal_params) # @deal.user_id = current_user.id
