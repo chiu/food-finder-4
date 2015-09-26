@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'diners/new'
+
+  get 'diners/create'
+
   # get 'restaurants/index'
 
   # get 'restaurants/show'
@@ -7,6 +11,7 @@ Rails.application.routes.draw do
 
   # get 'restaurants/edit'
   resources :restaurants
+  resources :users, only: [:new, :create]
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
