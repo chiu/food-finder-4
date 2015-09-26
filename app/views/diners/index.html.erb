@@ -5,10 +5,10 @@
 <h1>Rotten Mangoes</h1>
 <%= link_to "Submit a diner!", new_diner_path %>
 <hr>
-<% @Diners.each do |diner| %>
+<% @diners.each do |diner| %>
 
 <h2><%= link_to diner.name, diner_path(diner) %></h2>
 
 <p><%= diner.description %></p>
 <hr>
-<% end %>
+<% end %>  
